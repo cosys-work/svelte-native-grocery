@@ -1,4 +1,4 @@
-## Svelte Native Grocery App Example ##
+# Svelte Native Grocery App Example ##
 
 This is a port of the Nativescript core Grocery tutorial to [svelte-native](https://github.com/halfnelson/svelte-native)
 
@@ -6,11 +6,11 @@ This is a port of the Nativescript core Grocery tutorial to [svelte-native](http
 
 Includes examples of
 
- * Authentication
- * Navigation
- * RadListView usage
- * Load and update from remote source
- * Styling
+* Authentication
+* Navigation
+* RadListView usage
+* Load and update from remote source
+* Styling
 
 To launch:
 
@@ -18,8 +18,3 @@ To launch:
 npm install
 tns run <platform> --bundle
 ```
-
-
-
-
-

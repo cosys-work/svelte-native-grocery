@@ -10,7 +10,6 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const hashSalt = Date.now().toString();
-const svelteNativePreprocessor = require("svelte-native-preprocessor");
 
 module.exports = env => {
     // Add your custom Activities, Services and other Android app components here.
@@ -46,6 +45,8 @@ module.exports = env => {
         hmr, // --env.hmr,
         unitTesting, // --env.unitTesting,
         verbose, // --env.verbose
+        snapshotInDocker, // --env.snapshotInDocker
+        skipSnapshotTools // --env.skipSnapshotTools
     } = env;
     const isAnySourceMapEnabled = !!sourceMap || !!hiddenSourceMap;
     const externals = nsWebpack.getConvertedExternals(env.externals);
@@ -96,7 +97,7 @@ module.exports = env => {
             hashSalt
         },
         resolve: {
-            extensions: [".ts", ".mjs", ".js", ".svelte", ".scss", ".css"],
+            extensions: [".ts", ".js", ".scss", ".css"],
             // Resolve {N} system modules from tns-core-modules
             modules: [
                 resolve(__dirname, "node_modules/tns-core-modules"),
@@ -184,7 +185,7 @@ module.exports = env => {
                         },
                     ].filter(loader => !!loader)
                 },
-                
+
                 {
                     test: /\.(ts|css|scss|html|xml)$/,
                     use: "nativescript-dev-webpack/hmr/hot-loader"
@@ -206,10 +207,6 @@ module.exports = env => {
                 },
 
                 {
-                    test: /\.mjs$/,
-                    type: 'javascript/auto',
-                },
-                {
                     test: /\.ts$/,
                     use: {
                         loader: "ts-loader",
@@ -226,22 +223,6 @@ module.exports = env => {
                         },
                     }
                 },
-                {
-                    test: /\.svelte$/,
-                    exclude: /node_modules/,
-                    use: [
-                        {
-                            loader: 'svelte-loader',
-                            options: {
-                                preprocess: svelteNativePreprocessor(),
-                                hotReload: true,
-                                hotOptions: {
-                                    native: true
-                                }
-                            }
-                        }
-                    ]
-                }
             ]
         },
         plugins: [
@@ -298,6 +279,8 @@ module.exports = env => {
             ],
             projectRoot,
             webpackConfig: config,
+            snapshotInDocker,
+            skipSnapshotTools
         }));
     }
 

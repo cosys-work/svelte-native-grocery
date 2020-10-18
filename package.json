@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "org.nativescript.realworld2",
+    "id": "work.cosys.svetlanative",
     "tns-ios": {
       "version": "6.1.1"
     },
@@ -9,23 +9,23 @@
     }
   },
   "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
-  "repository": "<fill-your-repository-here>",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": "https://github.com/cosys-work/svelte-native-grocery.git",
   "dependencies": {
-    "marked": "^0.7.0",
-    "nativescript-theme-core": "^2.0.23",
-    "nativescript-ui-listview": "^7.1.0",
-    "svelte-native-nativescript-ui": "^0.6.1",
-    "svelte-native": "^0.6.1",
-    "timeago.js": "^4.0.0-beta.2",
-    "tns-core-modules": "~6.1.2"
+    "marked": "^1.2.0",
+    "nativescript-theme-core": "^2.0.24",
+    "nativescript-ui-listview": "^9.0.2",
+    "svelte-native-nativescript-ui": "^0.9.0",
+    "svelte-native": "^0.9.4",
+    "timeago.js": "^4.0.2",
+    "tns-core-modules": "~6.5.20"
   },
   "devDependencies": {
-    "nativescript-dev-webpack": "1.2.1",
-    "svelte": "~3.12.1",
-    "svelte-loader": "github:rixo/svelte-loader#2204a8f7e66e441f5e0ce6e70a5fa0f9e6bb2103",
-    "svelte-native-preprocessor": "~0.1.4",
-    "typescript": "3.6.2"
+    "nativescript-dev-webpack": "1.5.1",
+    "svelte": "~3.29.0",
+    "svelte-loader": "2.13.6",
+    "svelte-native-preprocessor": "~0.2.0",
+    "typescript": "4.0.3"
   },
   "readme": "NativeScript Application"
 }
