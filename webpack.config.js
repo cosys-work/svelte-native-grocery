@@ -33,7 +33,7 @@ module.exports = env => {
         // The 'appPath' and 'appResourcesPath' values are fetched from
         // the nsconfig.json configuration file.
         appPath = "app",
-        appResourcesPath = "app/App_Resources",
+        appResourcesPath = "app/AppResources",
 
         // You can provide the following flags when running 'tns run android|ios'
         snapshot, // --env.snapshot
